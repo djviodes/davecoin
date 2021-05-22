@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./app/index.js",
+    "server": "nodemon ./app/index.js",
+    "test": "cross-env DB_ENV=testing jest --watchAll --verbose --runInBand"
   },
   "repository": {
     "type": "git",
@@ -18,7 +20,14 @@
   },
   "homepage": "https://github.com/djviodes/davecoin#readme",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "crypto-js": "^4.0.0",
-    "elliptic": "^6.5.4"
+    "elliptic": "^6.5.4",
+    "express": "^4.17.1",
+    "http-errors": "^1.7.2",
+    "ws": "^7.4.5"
+  },
+  "devDependencies": {
+    "dotenv": "^10.0.0"
   }
 }
